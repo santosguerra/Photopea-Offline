@@ -246,14 +246,6 @@
 	}
 	.mainblock canvas {  display:block;  }
 	
-	
-	.tpanel {  /*  temporary panel  */
-		transition: all 0.2s cubic-bezier(0.240, 0.575, 0.665, 1.565);
-		transform: scale(0.6);
-		opacity:0;
-	}
-	
-	
 	.panelblock
 	{
 		/*border-top-width:1px;*/
