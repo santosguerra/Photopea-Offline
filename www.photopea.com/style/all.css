@@ -246,6 +246,36 @@
 	}
 	.mainblock canvas {  display:block;  }
 	
+	.alertcont
+	{
+		position:absolute;
+		width:50%;
+		left:25%;
+		max-width:700px;
+		/*pointer-events:none;*/
+		z-index: 10;
+		margin-top:1em;
+	}
+	
+	.alertpanel
+	{
+		font-size: 1.4em;
+		margin-bottom:1em;
+		background-color:#ffffff;
+		color: #000000;
+		padding:0.4em;
+		border-radius:0.5em;
+		text-align:center;
+		text-shadow:none;
+		box-shadow: rgba(0,0,0,0.5) 0 0 1em;
+	}
+	.tpanel {  /*  temporary panel  */
+		transition: all 0.2s cubic-bezier(0.240, 0.575, 0.665, 1.565);
+		transform: scale(0.6);
+		opacity:0;
+	}
+	
+	
 	.panelblock
 	{
 		/*border-top-width:1px;*/
