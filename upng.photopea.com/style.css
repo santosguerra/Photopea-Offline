@@ -11,14 +11,14 @@
 	
 	h1 {
 		font-size: 2em;
-		padding-top: 0.3em;
-		padding-bottom: 0.5em;
+		padding-top: 0.2em;
+		padding-bottom: 0.2em;
 	}
 	
 
 	header { 
 		color: white;
-		height:170px;
+		height:90px;
 		text-align:center;
 		background: linear-gradient(#4fa0eb, #9656d9);
 	}

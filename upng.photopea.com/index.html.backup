@@ -1,17 +1,32 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4249565-44"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());  gtag('config', 'UA-4249565-44');
+	</script>
+
 		<meta charset="utf-8" />
 		<title>UPNG: fast PNG minifier</title>
 		
 		<meta name="description" content="Fast and simple PNG minfier (compressor)." />
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<link rel='stylesheet' id='casper-google-fonts-css'  href='//fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700%2C400italic%7COpen+Sans%3A700%2C400&#038;ver=4.0.1' type='text/css' media='all' />
-		<!-- Local libraries for offline functionality -->
+		
+		<!--
 		<script src="js/pako.js"></script>
 		<script src="js/UPNG.js"></script>
 		<script src="js/UZIP.js"></script>
-		<script src="js/ext.js"></script>
+		-->
+		<script src="https://www.photopea.com/code/external/ext.js"></script>
+		
+		
+		
 		<script type="text/javascript">
 		
 			var pngs = [];
@@ -99,6 +114,7 @@
 					var p = pngs[i];
 					var li = document.createElement("p");  li.setAttribute("class", "item"+(i==curr?" active":"")); li._indx=i;
 					
+					
 					//var btn = document.createElement("button");   btn.innerHTML = "X";  if(i<pngs.length) li.appendChild(btn);
 					
 					var iname, os, ns, cont, pw=0, ph=0;
@@ -142,8 +158,10 @@
 				}
 			}
 			function itemClick(e) {  var ind=e.currentTarget._indx;  setCurr(ind);  var p=pngs[ind];  if(e.target.tagName=="BUTTON") save(p.ndata, p.name);   }
+			
 			function toKB(n) {  n=n/1024;  return (n>=100 ? Math.floor(n) : n.toFixed(1))+" kB";  }
 			function toBlock(txt, w) {  var st = w ? " style=\"width:"+w+"em;\"":"";  return "<span"+st+">"+txt+"</span>";  }
+		
 			function Go()
 			{
 				//loadURL("grid.png");  loadURL("bunny.png");
@@ -214,12 +232,26 @@
 				for(var i=0; i<pngs.length; i++) recompute(i);
 				update();
 			}
+			
 		</script>
+		
+
 	</head>
+
+
 	<body onload="Go();">
 		<header>
-			<h1><span style="font-size:1.5em">UPNG:</span> fast PNG minifier by <a href="https://www.Photopea.com" target="_blank">Photopea</a></h1>		
+			<h1><span style="font-size:1.5em">UPNG</span><br/> fast PNG minifier by <a href="//www.Photopea.com" target="_blank">Photopea</a></h1>
+			
+			<img id="bunny" title="Load bunny.png" onclick="loadURL('bunny.png');" src="bunny.png" />
+			
+			Check out <a href="//github.com/photopea/UPNG.js" target="_blank">UPNG.js</a>
+			<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fphotopea&amp;send=false&amp;layout=button_count&amp;width=120&amp;show_faces=true&amp;font&amp;colorscheme=light&amp;action=like&amp;height=25" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:130px; height:21px; display:inline;" allowTransparency="true"></iframe>
+			<!---->
+			<a href="https://twitter.com/photopeacom" class="twitter-follow-button" data-show-count="false">Follow @photopeacom</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			<!---->
 		</header>
+		
 		<div id="main">
 			<div id="lcont">
 				<div id="list">
@@ -227,17 +259,19 @@
 						<p><b>Shrink</b> and <b>optimize</b> images.
 						Set the <b>ideal balance</b> between the quality and the size.</p>
 						<br/>
-						<p><a href="https://blog.photopea.com/png-minifier-inside-photopea.html" target="_blank">Comparison with TinyPNG.com</a></p>
+						<p><a href="//blog.photopea.com/png-minifier-inside-photopea.html#examples" target="_blank">Comparison with TinyPNG.com</a></p>
 						<br/><br/>
 						<span style="font-size:1.5em; display:inline-block; padding:0.6em 0.2em; margin:0 1.4em; border:5px dashed #555; border-radius:0.6em; cursor:pointer;"
 							onclick="showOpenDialog()" >
 							Drag and drop your PNG files!</span>
+						<!--<input name="myFile" type="file" onchange="onFileDrop(this)" multiple>-->
 					</div>
 				</div>
 				<div id="totl" class="active"></div>
 			</div>
 			<canvas id="cnv"></canvas>
-		</div>	
+		</div>
+		
 		<div class="foot">
 		<footer>
 				<label>Size</label> 
